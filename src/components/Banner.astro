@@ -1,0 +1,79 @@
+---
+interface Props {
+  org?: string;
+  dept?: string;
+  title?: string;
+}
+
+const {title = 'meny',org = 'kommunedata',dept = 'vestlandet'} = Astro.props;
+---
+
+<header class="meny-banner">
+  <section>
+    <div class="flex-row">
+      <div class="ident-box">
+      <table>
+        <tr class="boxed">
+          <td>KD</td>
+          <td>{org}</td>
+        </tr>
+        <tr class="right">
+          <td>V</td>
+          <td>vestlandet</td>
+        </tr>
+      </table>
+      </div>
+    </div>
+    <div>
+      <div>
+        <h1>
+        {title}
+        <br>
+        =======
+        </h1>
+      </div>
+    </div>
+    <div>
+      <span>
+      Bruk piltastene for å velge.
+      Alt-F9 for å endre på menyen.
+      </span>
+    </div>
+  </section>
+</header>
+
+<style>
+.ident-box {
+  color: green;
+  font-family: mono;
+  letter-spacing: .2rem;
+  line-height: 0.5rem;
+  font-weight: bold;
+}
+table td{
+  margin: 2rem 0;
+}
+
+table td:nth-child(1) {
+  border-color: green;
+  text-align: right;
+  border-width: 0.175rem;
+  padding: 0.525rem 0.225rem;
+}
+
+table td {
+  padding: 1rem 0;
+}
+
+table tr:nth-child(1) td:nth-child(1) {
+  border-bottom-color: transparent;
+  padding: 2rem 0;
+}
+
+table tr:nth-child(2) td:nth-child(1) {
+  border-top-color:transparent;
+}
+
+</style>
+
+
