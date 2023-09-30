@@ -1,3 +1,6 @@
+# you can use lunarvim
+.vscode/
+
 # build output
 dist/
 
