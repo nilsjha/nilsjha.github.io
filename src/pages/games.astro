@@ -1,0 +1,32 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Banner from "@components/Banner.astro";
+import MenuEntry from "@components/MenuEntry.astro";
+import Footer from "@components/Footer.astro";
+---
+
+<Layout title="nilsjha.github.io">
+  <main class="grow py-20 container mx-auto">
+    <Banner
+      orgChar="KD"
+      org="Kommunedata"
+      deptChar="V"
+      dept="Vestlandet"
+      title="spel"
+      help1=""
+      help2=""
+    />
+    <ul role="list" class="w-100">
+      <MenuEntry
+        href="/"
+        title="Hovudmeny (Return Home)"
+        body="RETURNER til Hovudmeny"
+      />
+      <MenuEntry href="games/space" title="Space Commanders" body="" />
+      <MenuEntry href="games/digger" title="Digger" body="" />
+      <MenuEntry href="games/dave" title="Dave" body="" />
+      <MenuEntry href="games/outrun" title="Outrun2" body="" />
+    </ul>
+  </main>
+  <Footer />
+</Layout>

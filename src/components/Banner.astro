@@ -1,79 +1,92 @@
 ---
 interface Props {
+  orgChar?: string;
   org?: string;
+  deptChar?: string;
   dept?: string;
   title?: string;
+  help1?: string;
+  help2?: string;
 }
 
-const {title = 'meny',org = 'kommunedata',dept = 'vestlandet'} = Astro.props;
+const {
+  title = "meny",
+  org = "kommunedata",
+  dept = "vestlandet",
+  orgChar = org[0],
+  deptChar = dept[0],
+  help1 = "Bruk piltastene for å velge.",
+  help2 = "Alt-F9 for å endre på menyen.",
+} = Astro.props;
 ---
 
-<header class="meny-banner">
-  <section>
-    <div class="flex-row">
-      <div class="ident-box">
-      <table>
-        <tr class="boxed">
-          <td>KD</td>
-          <td>{org}</td>
-        </tr>
-        <tr class="right">
-          <td>V</td>
-          <td>vestlandet</td>
-        </tr>
-      </table>
+<header class="w-100">
+  <section class="w-100">
+    <div
+      class="max-md:flex max-md:flex-col grid grid-cols-12 m-4 gap-4 items-center"
+    >
+      <div class="ident-box col-span-3 col-start-2">
+        <table class="">
+          <tr class="">
+            <td class="uppercase">{orgChar}</td>
+            <td>{org}</td>
+          </tr>
+          <tr class="right">
+            <td class="uppercase">{deptChar}</td>
+            <td>{dept}</td>
+          </tr>
+        </table>
       </div>
     </div>
-    <div>
-      <div>
-        <h1>
-        {title}
-        <br>
-        =======
+    <div class="mx-4 col-span-2 col-start-6 max-md:hidden">
+      <div class="border-double border-8 p-2 m-2 font-mono text-center">
+        <h1 class="uppercase">
+          {title}
+          <br />
+          <span class="overflow-hidden whitespace-nowrap text-clip block"
+            >======</span
+          >
         </h1>
       </div>
     </div>
-    <div>
-      <span>
-      Bruk piltastene for å velge.
-      Alt-F9 for å endre på menyen.
+    <div class="col-span-3 col-end-12 max-md:invisible">
+      <span class="text-base">
+        {help1}
+        <br />
+        {help2}
       </span>
     </div>
   </section>
 </header>
 
 <style>
-.ident-box {
-  color: green;
-  font-family: mono;
-  letter-spacing: .2rem;
-  line-height: 0.5rem;
-  font-weight: bold;
-}
-table td{
-  margin: 2rem 0;
-}
+  .ident-box {
+    color: #18b218;
+    font-family: mono;
+    letter-spacing: 0.2rem;
+    line-height: 0.5rem;
+    font-weight: bold;
+  }
+  table td {
+    margin: 2rem 0;
+  }
 
-table td:nth-child(1) {
-  border-color: green;
-  text-align: right;
-  border-width: 0.175rem;
-  padding: 0.525rem 0.225rem;
-}
+  table td:nth-child(1) {
+    border-color: #18b218;
+    text-align: right;
+    border-width: 0.225rem;
+    padding: 0.525rem 0.125rem 0.525rem 0.325rem;
+  }
 
-table td {
-  padding: 1rem 0;
-}
+  table td:nth-child(2) {
+    padding-left: 0.225rem;
+  }
 
-table tr:nth-child(1) td:nth-child(1) {
-  border-bottom-color: transparent;
-  padding: 2rem 0;
-}
+  table tr:nth-child(1) td:nth-child(1) {
+    border-bottom-color: transparent;
+  }
 
-table tr:nth-child(2) td:nth-child(1) {
-  border-top-color:transparent;
-}
-
+  table tr:nth-child(2) td:nth-child(1) {
+    border-top-color: transparent;
+  }
 </style>
-
-
