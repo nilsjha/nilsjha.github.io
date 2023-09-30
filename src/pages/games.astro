@@ -3,15 +3,15 @@ import Layout from "@layouts/Layout.astro";
 import Banner from "@components/Banner.astro";
 import MenuEntry from "@components/MenuEntry.astro";
 import Footer from "@components/Footer.astro";
+import MenuSpacer from "@components/MenuSpacer.astro";
 ---
 
 <Layout title="nilsjha.github.io">
   <main class="grow py-20 container mx-auto">
     <Banner
-      orgChar="KD"
-      org="Kommunedata"
-      deptChar="V"
-      dept="Vestlandet"
+      org="Games from"
+      deptChar="IA"
+      dept="Internet Archive"
       title="spel"
       help1=""
       help2=""
@@ -22,10 +22,13 @@ import Footer from "@components/Footer.astro";
         title="Hovudmeny (Return Home)"
         body="RETURNER til Hovudmeny"
       />
+      <MenuSpacer/>
       <MenuEntry href="/games/space" title="Space Commanders" body="" />
       <MenuEntry href="/games/digger" title="Digger" body="" />
       <MenuEntry href="/games/dave" title="Dave" body="" />
       <MenuEntry href="/games/outrun" title="Outrun2" body="" />
+      <MenuSpacer/>
+      <MenuEntry href="https://archive.org/details/softwarelibrary_msdos_games" title="Fleire spel" body="More games at Internet Archive" />
     </ul>
   </main>
   <Footer />
