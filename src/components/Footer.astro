@@ -1,0 +1,25 @@
+---
+interface Props {
+  home?: boolean;
+}
+
+const { home = false } = Astro.props;
+const today = new Date();
+---
+
+<footer
+  class="w-100 content-center shrink-0 my-4 max-md:text-center px-20 uppercase tracking-widest flex gap-2"
+>
+  <span class="max-md:hidden"> ■ {today.getFullYear()}</span>
+  <span class="md:hidden">you need a computer for this site</span>
+  <span class={home ? "max-md:hidden" : "hidden"}>
+    | <a class="text-cyan-400" href="/">main menu</a></span
+  >
+  <span class={home ? "hidden" : "max-md:hidden"}
+    >| Nils Jarle Haugen <span
+      class="text-transparent bg-clip-text bg-gradient-to-r from-slate-400 to-slate-400"
+      >ålesund</span
+    > norway</span
+  >
+  <slot />
+</footer>

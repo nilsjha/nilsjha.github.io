@@ -1,0 +1,72 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Card from "@components/Card.astro";
+import Banner from "@components/Banner.astro";
+import MenuEntry from "@components/MenuEntry.astro";
+import MenuSpacer from "@components/MenuSpacer.astro";
+import Footer from "@components/Footer.astro";
+---
+
+<Layout title="nilsjha.github.io">
+  <main class="grow py-20 container mx-auto">
+    <Banner
+      orgChar="NJ"
+      org="Nils J."
+      deptChar="H"
+      dept="Haugen"
+      help1="Bruk musepekeren for å velge."
+      help2="Alt-F4 for å terminere menyen."
+    />
+    <ul role="list" class="w-100">
+      <MenuEntry
+        href="#"
+        title="Welcome!"
+        body="I'm a software dev from norway"
+      />
+      <MenuEntry
+        href="https://en.wikipedia.org/wiki/IBM_Personal_Computer"
+        title="What is this?"
+        body="Honouring history that made today possible"
+      />
+      <MenuSpacer />
+      <!--
+			<MenuEntry
+				href="/pcdos"
+				title="DOS Operativsystem"
+				body="Skriv meny for å returnere til meny"
+			/>
+			-->
+      <MenuEntry
+        href="/games"
+        title="Div spel (Games)"
+        body="[Val frå neste meny]"
+      />
+      <MenuEntry
+        href="https://linkedin.com/in/nhaugen/"
+        title="LinkedIn"
+        body="Do Business Where Business Is Done"
+      />
+      <MenuEntry
+        href="https://github.com/nilsjha/"
+        title="GitHub"
+        body="I use this for hosting code"
+      />
+      <MenuEntry
+        href="http://www.ntnu.no/alesund"
+        title="Education"
+        body="Computer Science"
+      />
+      <MenuEntry
+        href="#"
+        title="Hobbies"
+        body="Computers, hiking, concerts, photography"
+      />
+      <MenuEntry
+        href="https://en.sognefjord.no/"
+        title="Norways great nature"
+        body=""
+      />
+    </ul>
+  </main>
+  <Footer />
+</Layout>

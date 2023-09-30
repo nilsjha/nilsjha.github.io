@@ -1,0 +1,39 @@
+---
+interface Props {
+  title: string;
+  body: string;
+  href: string;
+  active?: boolean;
+  hideOnMobile?: boolean;
+}
+
+const {
+  href = "http://www.vg.no",
+  title = "Verdens Gang",
+  body = "Norsk nettavis.",
+  active = false,
+  hideOnMobile = false,
+} = Astro.props;
+---
+
+<li
+  class="group max-md:text-xl max-md:grid-cols-5 font-mono font-bold text-cyan-400 grid grid-cols-12 justify-center gap-2"
+>
+  <div
+    class="col-start-3 max-md:col-start-1 invisible group-hover:visible group-active:visible font-black text-red-500 animate-pulse justify-self-end"
+    id="red-arrow"
+    aria-hidden='true'
+  >
+    {"==>"}
+  </div>
+  <div class="col-span-3 max-md:col-start-2">
+    <a href={href}>
+      <h2>{title}</h2>
+    </a>
+  </div>
+  <div class="col-end-11 col-span-4 max-md:hidden">
+    <a href={href}>
+      <p class="overflow-hidden whitespace-nowrap text-ellipsis">{body}</p>
+    </a>
+  </div>
+</li>

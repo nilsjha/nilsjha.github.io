@@ -1,0 +1,29 @@
+---
+interface Props {
+  framesource: string;
+  height?: number;
+  width?: number;
+  title?: string;
+  description?: string;
+}
+
+const {
+  framesource,
+  height = 384,
+  width = 560,
+  title,
+  description,
+} = Astro.props;
+---
+
+<iframe
+  class=""
+  src={framesource}
+  width={width}
+  height={height}
+  frameborder="0"
+  webkitallowfullscreen="true"
+  mozallowfullscreen="true"
+  allowfullscreen
+>
+</iframe>

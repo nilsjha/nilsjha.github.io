@@ -1,0 +1,21 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import Banner from "@components/Banner.astro";
+import MenuEntry from "@components/MenuEntry.astro";
+import Footer from "@components/Footer.astro";
+---
+
+<Layout title="404 Not Found">
+  <main class="grow py-20 container mx-auto">
+    <Banner orgChar="NF" org="Not Found" deptChar="4" dept="404" title="FEIL" />
+    <ul role="list" class="w-100">
+      <MenuEntry
+        href="/"
+        title="Hovedmeny"
+        body="No content was found, click here for home. "
+      />
+    </ul>
+  </main>
+  <Footer />
+</Layout>
