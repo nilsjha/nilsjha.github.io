@@ -18,14 +18,38 @@ const {
   help1 = "Bruk piltastene for å velge.",
   help2 = "Alt-F9 for å endre på menyen.",
 } = Astro.props;
+
+const theCrt = {
+  old: {
+    name: "flickery",
+    duration: "0.2s",
+    easing: "step-start",
+    fillMode: "forwards",
+  },
+  new: {
+    name: "meirFlickery",
+    duration: "0.3s",
+    easing: "linear(0, 0.5,0,-0.5,0.5,0.8,0.2,-0.1,0.6,1.2, 1)",
+    fillMode: "forwards",
+  },
+};
+
+const crtFx = {
+  forwards: theCrt,
+  backwards: theCrt,
+};
 ---
 
 <header class="w-100">
   <section class="w-100">
     <div
-      class="max-md:flex max-md:flex-col grid grid-cols-12 m-4 gap-4 items-center"
+      class="max-md:flex max-md:flex-col grid grid-cols-12 m-4 gap-4 items-center tracking-widest max-lg:text-md"
     >
-      <div class="ident-box col-span-3 col-start-2">
+      <div
+        class="ident-box col-span-4 col-start-1 truncate"
+        transition:name="green-box"
+        transition:animate={crtFx}
+      >
         <table class="">
           <tr class="">
             <td class="uppercase">{orgChar}</td>
@@ -38,8 +62,19 @@ const {
         </table>
       </div>
     </div>
-    <div class="mx-4 col-span-2 col-start-6 max-md:hidden">
-      <div class="border-double border-8 p-2 m-2 font-mono text-center">
+    <div
+      class="mx-4 col-span-2 col-start-6 max-md:hidden max-xl:col-span-3 max-md:col-span-3"
+      transition:name="title-box"
+      transition:animate="none"
+    >
+      <div
+        class="border-double
+      border-8
+      p-2
+      m-2
+      font-mono
+      text-center"
+      >
         <h1 class="uppercase">
           {title}
           <br />
@@ -49,7 +84,7 @@ const {
         </h1>
       </div>
     </div>
-    <div class="col-span-3 col-end-12 max-md:invisible">
+    <div class="col-span-3 col-end-12 max-md:invisible whitespace-nowrap">
       <span class="text-base">
         {help1}
         <br />
@@ -57,36 +92,99 @@ const {
       </span>
     </div>
   </section>
+
+  <style>
+    .ident-box {
+      color: #18b218;
+      font-family: mono;
+      line-height: 0.5rem;
+      font-weight: bold;
+    }
+    table td {
+      margin: 2rem 0;
+    }
+
+    table td:nth-child(1) {
+      border-color: #18b218;
+      text-align: right;
+      border-width: 0.225rem;
+      padding: 0.525rem 0.125rem 0.525rem 0.325rem;
+    }
+
+    table td:nth-child(2) {
+      padding-left: 0.225rem;
+    }
+
+    table tr:nth-child(1) td:nth-child(1) {
+      border-bottom-color: transparent;
+    }
+
+    table tr:nth-child(2) td:nth-child(1) {
+      border-top-color: transparent;
+    }
+
+    @keyframes flickery {
+      0% {
+        filter: drop-shadow(5px 4px 0 green);
+      }
+
+      20% {
+        filter: drop-shadow(2px 8px 0 green) invert();
+      }
+
+      30% {
+        filter: drop-shadow(-12px 0px 0 white) opacity(75%);
+      }
+      50% {
+        filter: drop-shadow(0px -8px 0 blue) blur(12px);
+      }
+      60% {
+        filter: drop-shadow(-4px -10px 0 yellow);
+      }
+
+      65% {
+        filter: drop-shadow(-2px -6px 0 red) contrast(200%) brightness(100%);
+      }
+
+      80% {
+        filter: drop-shadow(6px -1px 0 orange) hue-rotate(90deg);
+      }
+
+      100% {
+        filter: drop-shadow(0px 0px 0 transparent);
+      }
+    }
+    @keyframes meirFlickery {
+      0% {
+        filter: drop-shadow(2px -12px 0 green);
+      }
+
+      20% {
+        filter: drop-shadow(-10px 4px 0 green) invert() contrast(12%);
+      }
+
+      30% {
+        filter: drop-shadow(-2px 3px 0 white) opacity(75%);
+      }
+      50% {
+        filter: drop-shadow(0px -8px 0 blue) blur(2px);
+      }
+      60% {
+        filter: drop-shadow(-20px -1px 0 cyan) opacity(45%);
+      }
+
+      65% {
+        filter: drop-shadow(-2px -9px 0 red) opacity(12%);
+      }
+
+      80% {
+        filter: drop-shadow(3px -1px 0 green) hue-rotate(90deg) opacity(33%)
+          blur(12px);
+      }
+
+      100% {
+        filter: drop-shadow(0px 0px 0 transparent);
+      }
+    }
+  </style>
 </header>
-
-<style>
-  .ident-box {
-    color: #18b218;
-    font-family: mono;
-    letter-spacing: 0.2rem;
-    line-height: 0.5rem;
-    font-weight: bold;
-  }
-  table td {
-    margin: 2rem 0;
-  }
-
-  table td:nth-child(1) {
-    border-color: #18b218;
-    text-align: right;
-    border-width: 0.225rem;
-    padding: 0.525rem 0.125rem 0.525rem 0.325rem;
-  }
-
-  table td:nth-child(2) {
-    padding-left: 0.225rem;
-  }
-
-  table tr:nth-child(1) td:nth-child(1) {
-    border-bottom-color: transparent;
-  }
-
-  table tr:nth-child(2) td:nth-child(1) {
-    border-top-color: transparent;
-  }
-</style>
