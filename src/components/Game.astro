@@ -5,6 +5,7 @@ interface Props {
   width?: number;
   title?: string;
   description?: string;
+  href?: string;
 }
 
 const {
@@ -15,6 +16,12 @@ const {
   description,
 } = Astro.props;
 ---
+
+<div class="md:hidden uppercase text-slate-700 pt-4 text-center">
+  <h1 class="text-3xl text-cyan-800">warning</h1>
+   mobile browsers <span class="text-slate-600">*will*</span>
+   not work
+</div>
 
 <iframe
   class=""

@@ -10,5 +10,14 @@ import Footer from "@components/Footer.astro";
       <Game framesource="https://archive.org/embed/Outrun_DOS" />
     </div>
   </main>
-  <Footer home={true} />
+  <Footer home={true}>
+    <span>|</span>
+    <span
+      ><a
+        class="_hotlink"
+        target="_blank"
+        href="https://archive.org/details/Outrun_DOS">internet archive</a
+      ></span
+    >
+  </Footer>
 </Layout>

@@ -16,11 +16,26 @@ module.exports = {
         },
       },
       animation: {
-        flash: "blink 1s step-start infinite",
+        flash: "blink 0.8s step-start infinite",
         degauss: "jigle 1s linear(0, 1, -10, 10, 0, 1) infinite",
         shake: "jigle 1s linear(0.5, 0.5, -0.5, 0.5, 0.5, 0.5) infinite",
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addComponents, _theme }) {
+      addComponents({
+        "*": {
+          "a._hotlink": {
+            "color": "rgb(34 211 238 / var(--tw-text-opacity))",
+          },
+          "a:hover._hotlink": {
+            "color": "red",
+            "animation":
+              "jigle 1s linear(0.5, 0.5, -0.5, 0.5, 0.5, 0.5) infinite",
+          },
+        },
+      });
+    },
+  ],
 };
