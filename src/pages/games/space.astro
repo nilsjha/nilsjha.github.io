@@ -12,5 +12,15 @@ import Footer from "@components/Footer.astro";
       />
     </div>
   </main>
-  <Footer home="true" up="true" />
+  <Footer home={true}>
+    <span>|</span>
+    <span
+      ><a
+        class="_hotlink"
+        target="_blank"
+        href="https://archive.org/details/msdos_Space_Commanders_1983"
+        >internet archive</a
+      ></span
+    >
+  </Footer>
 </Layout>

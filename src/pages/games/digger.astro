@@ -10,5 +10,15 @@ import Footer from "@components/Footer.astro";
       <Game framesource="https://archive.org/embed/msdos_Digger_1983_1983" />
     </div>
   </main>
-  <Footer home="true" up="true" />
+  <Footer home={true}>
+    <span>|</span>
+    <span
+      ><a
+        class="_hotlink"
+        target="_blank"
+        href="https://archive.org/details/msdos_Digger_1983_1983"
+        >internet archive</a
+      ></span
+    >
+  </Footer>
 </Layout>

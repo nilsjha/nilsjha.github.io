@@ -8,24 +8,29 @@ const today = new Date();
 ---
 
 <footer
-  class="w-100 content-center shrink-0 my-4 max-md:text-center px-20 uppercase tracking-widest flex gap-2"
+  class="w-100 content-center max-md:text-center shrink-0 my-4 max-md:my-2 px-20 max-sm:px-4 max-sm:text-center uppercase tracking-widest flex gap-2"
 >
-  <span class="max-md:hidden">
-    ■ {today.getFullYear()}
+  <span class="flex gap-2 max-md:hidden">
+    <span class="">■</span>
+    {today.getFullYear()}
   </span>
-  <span class="md:hidden">you need a computer for this site</span>
-  <span class={home ? "max-md:hidden" : "hidden"}>
-    | <a
-      class="text-cyan-400 hover:animate-shake active:animate-degauss"
-      href="/">main menu</a
-    ></span
+  <span class={home ? "" : "hidden"}
+    >|&nbsp;<a class="_hotlink" href="/">main menu</a></span
   >
-  <span class={home ? "hidden" : "max-md:hidden"}
-    >| Nils Jarle Haugen <span
+  <span class={home ? "hidden" : "max-md:hidden flex gap-2"}>
+    <span>|</span>
+     Nils Jarle Haugen<span
       class="text-transparent bg-clip-text bg-gradient-to-r from-slate-400 to-slate-400 hover:animate-degauss"
-      >ålesund</span
-    > norway</span
-  >
-  <slot />
+      ><a
+        href="https://www.fjordnorway.com/en/destinations/alesund--geiranger"
+        class="hover:animate-degauss"
+        target="_blank">ålesund</a
+      ></span
+    > norway
+  </span>
+  <div class="max-md:hidden">
+    <slot />
+  </div>
+
+  <style></style>
 </footer>
-<style></style>

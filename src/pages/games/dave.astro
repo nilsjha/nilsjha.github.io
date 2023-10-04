@@ -12,5 +12,14 @@ import Footer from "@components/Footer.astro";
       <Game framesource="https://archive.org/embed/dangerous_dave_1990" />
     </div>
   </main>
-  <Footer home="true" up="true" />
+  <Footer home={true}>
+    <span
+      ><a
+        class="_hotlink"
+        target="_blank"
+        href="https://archive.org/details/dangerous_dave_1990"
+        >internet archive</a
+      ></span
+    >
+  </Footer>
 </Layout>
