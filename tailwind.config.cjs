@@ -27,11 +27,11 @@ module.exports = {
       addComponents({
         "*": {
           "a._hotlink": {
-            "color": "rgb(34 211 238 / var(--tw-text-opacity))",
+            color: "rgb(34 211 238 / var(--tw-text-opacity))",
           },
           "a:hover._hotlink": {
-            "color": "red",
-            "animation":
+            color: "red",
+            animation:
               "jigle 1s linear(0.5, 0.5, -0.5, 0.5, 0.5, 0.5) infinite",
           },
         },
