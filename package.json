@@ -1,13 +1,15 @@
 {
   "name": "",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.2.0",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "lint": " eslint --ext .js,.astro src",
+    "format": "prettier --write . --plugin=prettier-plugin-astro"
   },
   "dependencies": {
     "@astrojs/tailwind": "^5.0.0",

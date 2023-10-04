@@ -4,6 +4,7 @@ import Banner from "@components/Banner.astro";
 import MenuEntry from "@components/MenuEntry.astro";
 import Footer from "@components/Footer.astro";
 import MenuSpacer from "@components/MenuSpacer.astro";
+import MenuList from "@components/MenuList.astro";
 ---
 
 <Layout title="nilsjha.github.io">
@@ -16,20 +17,24 @@ import MenuSpacer from "@components/MenuSpacer.astro";
       help1=""
       help2=""
     />
-    <ul role="list" class="w-100">
+    <MenuList>
       <MenuEntry
         href="/"
-        title="Hovudmeny (Return Home)"
-        body="RETURNER til Hovudmeny"
+        title="Hovudmeny (Home)"
+        body="RETURNER til forrige side"
       />
-      <MenuSpacer/>
+      <MenuSpacer />
       <MenuEntry href="/games/space" title="Space Commanders" body="" />
       <MenuEntry href="/games/digger" title="Digger" body="" />
       <MenuEntry href="/games/dave" title="Dave" body="" />
       <MenuEntry href="/games/outrun" title="Outrun2" body="" />
-      <MenuSpacer/>
-      <MenuEntry href="https://archive.org/details/softwarelibrary_msdos_games" title="Fleire spel" body="More games at Internet Archive" />
-    </ul>
+      <MenuSpacer />
+      <MenuEntry
+        href="https://archive.org/details/softwarelibrary_msdos_games"
+        title="More games"
+        body="Hosted at Internet Archive"
+      />
+    </MenuList>
   </main>
   <Footer />
 </Layout>

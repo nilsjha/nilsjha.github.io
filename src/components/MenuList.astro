@@ -1,0 +1,53 @@
+---
+const slideIt = {
+  old: {
+    name: "slideOut",
+    duration: "0.5s",
+    easing: "ease-out",
+    fillMode: "forwards",
+  },
+  new: {
+    name: "slideIn",
+    duration: "0.5s",
+    easing: "ease-in",
+    fillMode: "backwards",
+  },
+};
+
+const menuFx = {
+  forwards: slideIt,
+  backwards: slideIt,
+};
+---
+
+<ul
+  role="list"
+  class="w-100"
+  transition:name="menu-list"
+  transition:animate={menuFx}
+>
+  <slot />
+</ul>
+
+<style>
+  @keyframes slideIn {
+    from {
+      transform: translateX(-25%) translateY(-15%);
+      filter: blur(100px) opacity(10%);
+    }
+
+    to {
+      transform: translateX(0%) translateY(0%);
+    }
+  }
+  @keyframes slideOut {
+    from {
+      transform: translateX(0%);
+    }
+
+    to {
+      transform: translateY(10%) translateX(0%);
+      filter: blur(100px) opacity(10%);
+    }
+  }
+</style>

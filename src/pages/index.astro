@@ -1,9 +1,9 @@
 ---
 import Layout from "@layouts/Layout.astro";
-import Card from "@components/Card.astro";
 import Banner from "@components/Banner.astro";
 import MenuEntry from "@components/MenuEntry.astro";
 import MenuSpacer from "@components/MenuSpacer.astro";
+import MenuList from "@components/MenuList.astro";
 import Footer from "@components/Footer.astro";
 ---
 
@@ -17,7 +17,7 @@ import Footer from "@components/Footer.astro";
       help1="Bruk musepekeren for å velge."
       help2="Alt-F9 for å endre på menyen."
     />
-    <ul role="list" class="w-100">
+    <MenuList>
       <MenuEntry
         href="#"
         title="Welcome!"
@@ -66,7 +66,7 @@ import Footer from "@components/Footer.astro";
         title="Norways great nature"
         body=""
       />
-    </ul>
+    </MenuList>
   </main>
   <Footer />
 </Layout>
