@@ -8,13 +8,25 @@ const today = new Date();
 ---
 
 <footer
+  class="w-100
+  content-center
+  max-md:text-center
+  shrink-0
+  my-4
+  max-md:my-2
+  px-20
+  max-sm:px-4
+  max-sm:text-center
+  uppercase
+  tracking-widest
+  flex flex-row"
 >
-  <span class="flex gap-2 max-md:hidden">
+  <span class="flex flex-row gap-2 max-md:hidden">
     <span class="">■</span>
     {today.getFullYear()}
   </span>
   <span class={home ? "" : "hidden"}
-    >|&nbsp;<a class="_hotlink" href="/">main menu</a></span
+    >|<a class="_hotlink" href="/">main menu</a></span
   >
   <span class={home ? "hidden" : "max-md:hidden flex gap-2"}>
     <span>|</span>
@@ -30,6 +42,4 @@ const today = new Date();
   <div class="max-md:hidden">
     <slot />
   </div>
-
-  <style></style>
 </footer>
