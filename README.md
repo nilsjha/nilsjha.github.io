@@ -1,6 +1,6 @@
 ```
 Local dev:           pnpm dev
-Linting:             pnpm eslint --ext .js,.astro src
+Linting:             pnpm lint
 Build:               pnpm build
-Write formatting:    pnpm prettier --write . --plugin=prettier-plugin-astro
+Write formatting:    pnpm format
 ```

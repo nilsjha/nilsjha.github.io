@@ -9,7 +9,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "lint": " eslint --ext .js,.astro src",
-    "formatt s": "prettier --write . --plugin=prettier-plugin-astro"
+    "format": "prettier --write . --plugin=prettier-plugin-astro"
   },
   "dependencies": {
     "@astrojs/tailwind": "^5.0.0",
