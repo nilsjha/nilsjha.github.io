@@ -1,9 +1,10 @@
 ---
 interface Props {
   home?: boolean;
+  separator?: boolean;
 }
 
-const { home = false } = Astro.props;
+const { home = false, separator = false } = Astro.props;
 const today = new Date();
 ---
 
@@ -39,6 +40,7 @@ const today = new Date();
     > norway
   </span>
   <div class="max-md:hidden">
+    <span class={separator ? "" : "hidden"}>|</span>
     <slot />
   </div>
 </footer>
