@@ -41,12 +41,12 @@ const crtFx = {
 ---
 
 <header class="w-100">
-  <section class="w-100">
+  <section class="w-100 font-mono max-md:text-2xl">
     <div
-      class="max-md:flex max-md:flex-col grid grid-cols-12 m-4 gap-4 items-center tracking-widest max-lg:text-md"
+      class="justify-evenly max-md:flex max-md:flex-col grid grid-cols-12 m-4 gap-4 items-center tracking-widest max-lg:text-md"
     >
       <div
-        class="ident-box col-span-4 col-start-1 truncate"
+        class="ident-box col-span-4 col-start-1 truncate leading-tight tracking-widest"
         transition:name="green-box"
         transition:animate={crtFx}
       >
@@ -63,8 +63,8 @@ const crtFx = {
       </div>
     </div>
     <div
-      class="mx-4 col-span-2 col-start-6 max-md:hidden max-xl:col-span-3 max-md:col-span-3"
-      transition:name="title-box"
+      class="mx-4 col-span-2 shrink-0 col-start-6 max-md:hidden max-xl:col-span-3 max-md:col-span-3"
+      transition:name="banner-title-box"
       transition:animate="none"
     >
       <div
@@ -72,7 +72,6 @@ const crtFx = {
       border-8
       p-2
       m-2
-      font-mono
       text-center"
       >
         <h1 class="uppercase">
@@ -84,7 +83,9 @@ const crtFx = {
         </h1>
       </div>
     </div>
-    <div class="col-span-3 col-end-12 max-md:invisible whitespace-nowrap">
+    <div class="col-span-3 col-end-12 max-md:invisible whitespace-nowrap"
+    transition:name="banner-help-box"
+    transition:animate="fade">
       <span class="text-base">
         {help1}
         <br />
@@ -96,8 +97,7 @@ const crtFx = {
   <style>
     .ident-box {
       color: #18b218;
-      font-family: mono;
-      line-height: 0.5rem;
+      font-family: monospace;
       font-weight: bold;
     }
     table td {
