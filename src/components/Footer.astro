@@ -2,9 +2,10 @@
 interface Props {
   home?: boolean;
   separator?: boolean;
+  up?: boolean;
 }
 
-const { home = false, separator = false } = Astro.props;
+const { home = false, separator = false, up = false } = Astro.props;
 const today = new Date();
 ---
 
@@ -29,7 +30,9 @@ const today = new Date();
   <span class={home ? "" : "hidden"}
     >|<a class="_hotlink" href="/">main menu</a></span
   >
-  <span class={home ? "hidden" : "max-md:hidden flex gap-2"}>
+
+  <span class={up ? "" : "hidden"}>|<a class="_hotlink" href="..">up</a></span>
+  <span class={home || up ? "hidden" : "max-md:hidden flex gap-2"}>
     <span>|</span>
      Nils Jarle Haugen<span class="text-slate-400 hover:animate-degauss"
       ><a

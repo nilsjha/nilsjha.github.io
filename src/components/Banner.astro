@@ -1,4 +1,6 @@
 ---
+import { returnOnCondition } from "@utils/ui";
+
 interface Props {
   orgChar?: string;
   org?: string;
@@ -7,6 +9,7 @@ interface Props {
   title?: string;
   help1?: string;
   help2?: string;
+  overrideClass?: string;
 }
 
 const {
@@ -17,6 +20,7 @@ const {
   deptChar = dept[0],
   help1 = "Bruk piltastene for å velge.",
   help2 = "Alt-F9 for å endre på menyen.",
+  overrideClass,
 } = Astro.props;
 
 const theCrt = {
@@ -46,7 +50,12 @@ const crtFx = {
       class="justify-evenly max-md:flex max-md:flex-col grid grid-cols-12 m-4 gap-4 items-center tracking-widest max-lg:text-md"
     >
       <div
-        class="ident-box col-span-4 col-start-1 truncate leading-tight tracking-widest"
+        class={returnOnCondition(
+          overrideClass !== undefined,
+          overrideClass ?? "",
+          "text-[#18b218]",
+          "_ident-box col-span-4 col-start-1 truncate leading-tight tracking-widest",
+        )}
         transition:name="green-box"
         transition:animate={crtFx}
       >
@@ -68,7 +77,7 @@ const crtFx = {
       transition:animate="none"
     >
       <div
-        class="border-double
+        class="border-double border-inherit
       border-8
       p-2
       m-2
@@ -97,8 +106,7 @@ const crtFx = {
   </section>
 
   <style>
-    .ident-box {
-      color: #18b218;
+    ._ident-box {
       font-family: monospace;
       font-weight: bold;
     }

@@ -1,4 +1,12 @@
 ---
+import { returnOnCondition } from "@utils/ui";
+
+interface Props {
+  overrideClass?: string;
+}
+
+const { overrideClass } = Astro.props;
+
 const slideIt = {
   old: {
     name: "slideOut",
@@ -22,7 +30,12 @@ const menuFx = {
 
 <ul
   role="list"
-  class="w-100"
+  class={returnOnCondition(
+    overrideClass === undefined,
+    "text-cyan-400",
+    overrideClass ?? "",
+    "w-100",
+  )}
   transition:name="menu-list"
   transition:animate={menuFx}
 >

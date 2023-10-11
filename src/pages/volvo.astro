@@ -7,16 +7,20 @@ import MenuSpacer from "@components/MenuSpacer.astro";
 import MenuList from "@components/MenuList.astro";
 ---
 
-<Layout title="volvo - nilsjha.github.io">
+<Layout
+  title="volvo - nilsjha.github.io"
+  overrideClass="bg-black text-yellow-400"
+>
   <main class="grow py-20 container mx-auto">
     <Banner
-      org="Hobbies"
+      org="Tech"
       dept="Volvo"
       title="volvo"
       help1=""
       help2=""
+      overrideClass="text-green-800"
     />
-    <MenuList>
+    <MenuList overrideClass="text-[#CED9E5] text-blue-600">
       <MenuEntry
         href="/"
         title="Hovudmeny (Home)"
@@ -25,19 +29,11 @@ import MenuList from "@components/MenuList.astro";
       <MenuSpacer />
       <MenuEntry href="/volvo/#" title="VIN Decoder" body="" />
       <MenuEntry href="/volvo/#" title="Repair guides" body="" />
-      <MenuEntry href="/volvo/#"title="Parts catalogue" body="" />
+      <MenuEntry href="/volvo/#" title="Parts catalogue" body="" />
       <MenuSpacer />
-      <MenuEntry
-        href=""
-        title="Ext link"
-        body=""
-      />
-      <MenuEntry
-        href=""
-        title="Ext link"
-        body=""
-      />
+      <MenuEntry href="" title="Ext link" body="" />
+      <MenuEntry href="" title="Ext link" body="" />
     </MenuList>
   </main>
-  <Footer />
+  <Footer home={true} />
 </Layout>

@@ -27,7 +27,7 @@ module.exports = {
       addComponents({
         "*": {
           "a._hotlink": {
-            color: "rgb(34 211 238 / var(--tw-text-opacity))",
+            filter: "contrast(300%)",
           },
           "a:hover._hotlink": {
             color: "red",
