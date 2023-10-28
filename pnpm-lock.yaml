@@ -15,7 +15,7 @@ dependencies:
     specifier: ^3.2.0
     version: 3.2.0
   solid-js:
-    specifier: ^1.4.3
+    specifier: ^1.7.12
     version: 1.7.12
   tailwindcss:
     specifier: ^3.3.3

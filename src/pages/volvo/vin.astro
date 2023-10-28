@@ -1,0 +1,62 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Banner from "@components/Banner.astro";
+import Footer from "@components/Footer.astro";
+
+import VinDecoder from "@components/volvo/solid/vindecoder";
+---
+
+<Layout
+  title="vin decoder - nilsjha.github.io"
+  overrideClass="bg-black text-yellow-400"
+>
+  <main class="grow py-20 container mx-auto">
+    <Banner
+      org="Tech"
+      dept="Volvo"
+      title="v i n"
+      help1="Passenger VINs always starts with YV or 7JR"
+      help2="Note: F"
+      overrideClass="text-yellow-400"
+    />
+    <h3>decoder</h3>
+    <div
+      class="w-100 h-full grid auto-cols-3 auto-rows-fr col-span-2 justify-center align-center"
+    >
+      <VinDecoder client:load />
+    </div>
+    <h3>example</h3>
+    <h3>Key</h3>
+    <table class="table-auto uppercase tracking-wide border-spacing-0.5">
+      <tr>
+        <th>manufacturer code</th>
+        <th>vehicle type</th>
+        <th>engine type</th>
+        <th>gearbox</th>
+        <th>model year</th>
+        <th>factory code</th>
+        <th>chassis number</th>
+      </tr>
+      <tr>
+        <td>tssss</td>
+      </tr>
+    </table>
+  </main>
+  <!--
+    <MenuList overrideClass="text-[#CED9E5] text-blue-600">
+      <MenuEntry
+        href="/"
+        title="Hovudmeny (Home)"
+        body="RETURNER til forrige side"
+      />
+      <MenuSpacer />
+      <MenuEntry href="/volvo/vin" title="VIN Decoder" body="" />
+      <MenuEntry href="/volvo/#" title="Repair guides" body="" />
+      <MenuEntry href="/volvo/#" title="Parts catalogue" body="" />
+      <MenuSpacer />
+      <MenuEntry href="" title="Ext link" body="" />
+      <MenuEntry href="" title="Ext link" body="" />
+    </MenuList>
+    -->
+</Layout>
+<Footer up={true} />
