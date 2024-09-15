@@ -10,31 +10,42 @@ import Screen from "@components/Screen.astro";
 ---
 
 <Layout title="nilsjha.github.io">
-    <Banner
-      org="Kommunedata"
-      orgChar="KD"
-      dept="Vestlandet"
-      title="About"
-      help1=""
-      help2=""
-    />
-    <div class="flex flex-row items-center justify-center">
-        <div class="w-2/4">Hello!</div>
-    </div>
     <Screen>
-    <MenuList>
-      <MenuEntry
-        href="/"
-        title="Hovudmeny (Home)"
-        body="RETURNER til forrige side"
-      />
-      <MenuEntry
-        href="https://en.wikipedia.org/wiki/IBM_Personal_Computer"
-        title="What is this?"
-        body="Honouring history that made today possible"
-      />
-      <MenuSpacer />
-    </MenuList>
+        <div class="flex flex-col gap-2">
+            <h3 class="text-xl">About the page</h3>
+        <p>
+            This page is inspired by the menu system that was
+            on the first computer I owned, an IBM PS/2 Model 30. The machine is still
+            running, in quite original condition, but now with solid-state storage - for the future!
+        </p>
+        <p>
+            <h3 class="text-xl">Specs</h3>
+            <ul>
+                <li>IBM PS/2 Model 30 8530-021</li>
+                <li>Main processor: IBM 8086 8 MHz </li>
+                <li>Coprocessor: None installed, socket for 8087</li>
+                <li>System memory: 640 KB </li>
+                <li>Floppy drive: 3.5" Dual Density 720KB</li>
+                <li>Hard drive: 3.5" 20 GB ESDI</li>
+                <li>Ports: PS/2 keyboard, mouse, serial, parallel, video</li>
+                <li>Weight: 8kg</li>
+                <li>Made in UK</li>
+            </ul>
+            <h3 class="text-xl">Peripherals</h3>
+            <ul>
+                <li>Monitor: 14" IBM PS/2 Colour </li>
+                <li>Keyboard: IBM Model M, Norwegian</li>
+                <li>Mouse: Original IBM PS/2 mouse </li>
+                <li>Printer: IBM Proprinter II (do you have one to sell?)</li>
+            </ul>
+            <h3 class="text-xl">Mods</h3>
+            <ul>
+                <li>Solid state disk: Compact Flash as disk using XT-IDE rev3</li>
+                <li>Clock battery fix: CR2032 battery mod</li>
+            </ul>
+        <a class="_hotlink"  href="https://en.wikipedia.org/wiki/IBM_PS/2" target="_blank"> Wikipedia</a>
+        </p>
+        </div>
     </Screen>
   <Footer home={true} />
 </Layout>
