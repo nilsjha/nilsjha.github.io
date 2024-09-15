@@ -13,7 +13,7 @@ import gh_running from "../assets/images/gh_running.jpg"
 <Layout title="About">
     <Screen>
         <div class="flex flex-col gap-2">
-            <h3 class="text-xl">About the page</h3>
+            <h3 class="text-2xl">About the page</h3>
         <p>
             This page is inspired by the first computer I owned, an IBM PS/2 Model 30. The machine is still
             running, in quite original condition, but now with solid-state storage - for the future!
@@ -34,7 +34,7 @@ import gh_running from "../assets/images/gh_running.jpg"
                 </li>
             </ul>
         </section>
-        <section class="grid grid-cols-2 grid-rows-2 gap-10">
+        <section class="flex flex-col md:grid grid-cols-2 grid-rows-2 gap-10">
             <aside class="col-start-1 row-span-2">
             <h3 class="text-xl">Specs</h3>
             <ul>
@@ -46,14 +46,13 @@ import gh_running from "../assets/images/gh_running.jpg"
                 <li>Hard drive: 3.5" 20 GB ESDI</li>
                 <li>Ports: PS/2 keyboard, mouse, serial, parallel, video</li>
                 <li>Weight: 8kg</li>
-                <li>Made in UK</li>
             </ul>
             <a class="_hotlink"  href="https://en.wikipedia.org/wiki/IBM_PS/2" target="_blank"> See more on Wikipedia</a>
             </aside>
             <aside class="col-start-2 row-span-1">
                     <h3 class="text-xl">Peripherals</h3>
                     <ul>
-                        <li>Monitor: 14" IBM PS/2 Colour </li>
+                        <li>Monitor: 14" IBM PS/2 Color (15 kg!)</li>
                         <li>Keyboard: IBM Model M, Norwegian</li>
                         <li>Mouse: Original IBM PS/2 mouse </li>
                         <li>Printer: IBM Proprinter II</li>
@@ -69,5 +68,5 @@ import gh_running from "../assets/images/gh_running.jpg"
         </section>
         </div>
     </Screen>
-  <Footer home={true} />
+  <Footer name={true} />
 </Layout>

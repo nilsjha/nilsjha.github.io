@@ -4,29 +4,30 @@ interface Props {
   separator?: boolean;
 }
 
-const { home = false, separator = false } = Astro.props;
+const { name: name = false, separator = false } = Astro.props;
 const today = new Date();
 ---
 
 <footer
   class="
   text-base
-  md:text
+  md:text-base
   shrink-0
-  my-4
-  px-20
+  mx-auto
   uppercase
   tracking-widest
-  flex flex-row gap-4"
+  flex flex-row gap-4
+  px-8
+  py-8"
 >
   <span class="flex flex-row gap-1">
     {today.getFullYear()}
   </span>
-    <span class="">■</span>
-  <span class={home ? "" : "hidden"}>
+  <span class={name ? "" : "hidden"}>
     <a class="_hotlink" href="/">main menu</a></span
   >
-  <span class={home ? "hidden" : "block"}>
+  <span class={name ? "block" : "hidden"}>
+    <span class="">■</span>
     <span class="flex flex-col md:flex-row md:gap-4">
      Nils Jarle Haugen<span class="text-slate-400 hover:animate-degauss"
       ><a
@@ -37,7 +38,7 @@ const today = new Date();
     > norway
     </span>
   </span>
-  <div class="max-md:hidden">
+  <div class="hidden md:block">
     <span class={separator ? "" : "hidden"}></span>
     <slot />
   </div>

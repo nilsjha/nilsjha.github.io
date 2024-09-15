@@ -17,23 +17,23 @@ const {
 ---
 
 <li
-  class=" group  font-mono font-bold text-cyan-400 md:grid grid-cols-2 justify-center items-center"
+  class=" group font-mono font-bold text-cyan-400 md:grid grid-cols-2 justify-center items-center flex flex-col"
 >
   <div class="col-start-1 flex flex-row justify-start gap-1">
   <aside
-    class="invisible group-hover:visible group-active:visible font-black text-red-500 animate-flash justify-self-end"
+    class="max-md:hidden invisible group-hover:visible group-active:visible font-black text-red-500 animate-flash justify-self-end"
     id="red-arrow"
     aria-hidden="true"
   >
     {"==>"}
   </aside>
-  <div class="">
+  <div class="text-xl md:text-base p-1 md:p-0">
     <a href={href}>
       <h2>{title}</h2>
     </a>
   </div>
   </div>
-  <div class="justify-self-start col-start-2  max-md:hidden">
+  <div class="justify-self-start col-start-2  hidden md:block">
     <a href={href}>
       <p class="overflow-hidden whitespace-nowrap text-ellipsis">{body}</p>
     </a>
