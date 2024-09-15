@@ -9,33 +9,32 @@ import Screen from "@components/Screen.astro";
 ---
 
 <Layout title="nilsjha.github.io">
-    <Banner
-      orgChar="NJ"
-      org="Nils J."
-      deptChar="H"
-      dept="Haugen"
-      help1="Tech, photography, hiking"
-      help2="software, fishing, bricks..."
-    />
-    <Screen>
-      <div class="md:m-4">
-      <div class="flex flex-col items-center justify-center  mx-auto md:w-2/3 gap-2">
+  <Banner
+    orgChar="NJ"
+    org="Nils J."
+    deptChar="H"
+    dept="Haugen"
+    help1="Tech, photography, hiking"
+    help2="software, fishing, bricks..."
+  />
+  <Screen>
+    <div class="md:m-4">
+      <div
+        class="flex flex-col items-center justify-center mx-auto md:w-2/3 gap-2"
+      >
         <p class="">
-        <span class="text-4xl">W</span>elcome to my humble corner at the web!
+          <span class="text-4xl">W</span>elcome to my humble corner at the web!
         </p>
-      <p>
-        This page is a tribute to the first computer I owned myself, and which inspired me to work with tech in the first place.
-        Have fun, and play some retrogames!<span class="text-black bg-white">&nbsp;</span>
-      </p>
+        <p>
+          This page is a tribute to the first computer I owned myself, and which
+          inspired me to work with tech in the first place. Have fun, and play
+          some retrogames!<span class="text-black bg-white">&nbsp;</span>
+        </p>
       </div>
-      </div>
+    </div>
     <MenuList>
       <MenuSpacer />
-      <MenuEntry
-        href="/games"
-        title="Games"
-        body="[Selection in next menu]"
-      />
+      <MenuEntry href="/games" title="Games" body="[Selection in next menu]" />
       <MenuEntry
         href="https://linkedin.com/in/nhaugen/"
         title="LinkedIn"
@@ -63,6 +62,6 @@ import Screen from "@components/Screen.astro";
         body="Norways greatest nature!"
       />
     </MenuList>
-    </Screen>
+  </Screen>
   <Footer />
 </Layout>

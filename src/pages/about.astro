@@ -2,71 +2,96 @@
 import Layout from "@layouts/Layout.astro";
 import Footer from "@components/Footer.astro";
 import Screen from "@components/Screen.astro";
-import { Picture, Image} from "astro:assets";
-import desktop from "../assets/images/desktop.jpg"
-import mouse from "../assets/images/mouse.jpg"
-import keys from "../assets/images/keys.jpg"
-import serial from "../assets/images/serial.jpg"
-import gh_running from "../assets/images/gh_running.jpg"
+import { Picture, Image } from "astro:assets";
+import desktop from "../assets/images/desktop.jpg";
+import mouse from "../assets/images/mouse.jpg";
+import keys from "../assets/images/keys.jpg";
+import serial from "../assets/images/serial.jpg";
+import gh_running from "../assets/images/gh_running.jpg";
 ---
 
 <Layout title="About">
-    <Screen>
-        <div class="flex flex-col gap-2">
-            <h3 class="text-2xl">About the page</h3>
-        <p>
-            This page is inspired by the first computer I owned, an IBM PS/2 Model 30. The machine is still
-            running, in quite original condition, but now with solid-state storage - for the future!
-        </p>
-        <section class="mx-auto m-4">
-            <ul class="h-1/6 grid grid-cols-2 grid-rows-2 md:grid-cols-4 md:grid-rows-1 gap-4">
-                <li class="">
-                    <Image src={keys} alt="Norwegian IBM Model M" widths={[120,320,600,1920]}/>
-                </li>
-                <li class="">
-                    <Image src={desktop} alt="The first computer I owned" widths={[120,320,600,1920]}/>
-                </li>
-                <li class="">
-                    <Image src={mouse} alt="Original PS/2 Mouse" widths={[120,320,600,1920]}/>
-                </li>
-                <li class="">
-                    <Image src={gh_running} alt="Welcome to the 21st century!" widths={[120,320,600,1920]}/>
-                </li>
-            </ul>
-        </section>
-        <section class="flex flex-col md:grid grid-cols-2 grid-rows-2 gap-10">
-            <aside class="col-start-1 row-span-2">
-            <h3 class="text-xl">Specs</h3>
-            <ul>
-                <li>Model: 8530-021</li>
-                <li>Main processor: Intel 8086 @ 8 MHz </li>
-                <li>Coprocessor: None, support for 8087</li>
-                <li>System memory: 640 KB </li>
-                <li>Floppy drive: 3.5" Dual Density 720KB</li>
-                <li>Hard drive: 3.5" 20 GB ESDI</li>
-                <li>Ports: PS/2 keyboard, mouse, serial, parallel, video</li>
-                <li>Weight: 8kg</li>
-            </ul>
-            <a class="_hotlink"  href="https://en.wikipedia.org/wiki/IBM_PS/2" target="_blank"> See more on Wikipedia</a>
-            </aside>
-            <aside class="col-start-2 row-span-1">
-                    <h3 class="text-xl">Peripherals</h3>
-                    <ul>
-                        <li>Monitor: 14" IBM PS/2 Color (15 kg!)</li>
-                        <li>Keyboard: IBM Model M, Norwegian</li>
-                        <li>Mouse: Original IBM PS/2 mouse </li>
-                        <li>Printer: IBM Proprinter II</li>
-                </ul>
-            </aside>
-                <div class="col-start-2 row-start-2 flex flex-col">
-                    <h3 class="text-xl">Mods</h3>
-                    <ul>
-                        <li>Solid state disk: Compact Flash as disk using XT-IDE rev3</li>
-                        <li>Clock battery: CR2032 socket support</li>
-                    </ul>
-                </div>
-        </section>
+  <Screen>
+    <div class="flex flex-col gap-2">
+      <h3 class="text-2xl">About the page</h3>
+      <p>
+        This page is inspired by the first computer I owned, an IBM PS/2 Model
+        30. The machine is still running, in quite original condition, but now
+        with solid-state storage - for the future!
+      </p>
+      <section class="mx-auto m-4">
+        <ul
+          class="h-1/6 grid grid-cols-2 grid-rows-2 md:grid-cols-4 md:grid-rows-1 gap-4"
+        >
+          <li class="">
+            <Image
+              src={keys}
+              alt="Norwegian IBM Model M"
+              widths={[120, 320, 600, 1920]}
+            />
+          </li>
+          <li class="">
+            <Image
+              src={desktop}
+              alt="The first computer I owned"
+              widths={[120, 320, 600, 1920]}
+            />
+          </li>
+          <li class="">
+            <Image
+              src={mouse}
+              alt="Original PS/2 Mouse"
+              widths={[120, 320, 600, 1920]}
+            />
+          </li>
+          <li class="">
+            <Image
+              src={gh_running}
+              alt="Welcome to the 21st century!"
+              widths={[120, 320, 600, 1920]}
+            />
+          </li>
+        </ul>
+      </section>
+      <section class="flex flex-col md:grid grid-cols-2 grid-rows-2 gap-10">
+        <aside class="col-start-1 row-span-2">
+          <h3 class="text-xl">Specs</h3>
+          <ul>
+            <li>Model: 8530-021</li>
+            <li>Main processor: Intel 8086 @ 8 MHz</li>
+            <li>Coprocessor: None, support for 8087</li>
+            <li>System memory: 640 KB</li>
+            <li>Floppy drive: 3.5" Dual Density 720KB</li>
+            <li>Hard drive: 3.5" 20 GB ESDI</li>
+            <li>Ports: PS/2 keyboard, mouse, serial, parallel, video</li>
+            <li>Weight: 8kg</li>
+          </ul>
+          <a
+            class="_hotlink"
+            href="https://en.wikipedia.org/wiki/IBM_PS/2"
+            target="_blank"
+          >
+            See more on Wikipedia</a
+          >
+        </aside>
+        <aside class="col-start-2 row-span-1">
+          <h3 class="text-xl">Peripherals</h3>
+          <ul>
+            <li>Monitor: 14" IBM PS/2 Color (15 kg!)</li>
+            <li>Keyboard: IBM Model M, Norwegian</li>
+            <li>Mouse: Original IBM PS/2 mouse</li>
+            <li>Printer: IBM Proprinter II</li>
+          </ul>
+        </aside>
+        <div class="col-start-2 row-start-2 flex flex-col">
+          <h3 class="text-xl">Mods</h3>
+          <ul>
+            <li>Solid state disk: Compact Flash as disk using XT-IDE rev3</li>
+            <li>Clock battery: CR2032 socket support</li>
+          </ul>
         </div>
-    </Screen>
+      </section>
+    </div>
+  </Screen>
   <Footer name={true} />
 </Layout>

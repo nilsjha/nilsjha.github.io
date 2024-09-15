@@ -9,26 +9,38 @@ import Screen from "@components/Screen.astro";
 ---
 
 <Layout title="Games">
-    <Banner
-      org="Games from"
-      deptChar="IA"
-      dept="Internet Archive"
-      title="Games"
-      help1=""
-      help2=""
-    />
-    <Screen>
+  <Banner
+    org="Games from"
+    deptChar="IA"
+    dept="Internet Archive"
+    title="Games"
+    help1=""
+    help2=""
+  />
+  <Screen>
     <MenuList>
-      <MenuEntry
-        href="/"
-        title="Home"
-        body="RETURN to the main page"
-      />
+      <MenuEntry href="/" title="Home" body="RETURN to the main page" />
       <MenuSpacer />
-      <MenuEntry href="/games/space" title="Space Commanders" body="Space Invaders Clone, 1983" />
-      <MenuEntry href="/games/digger" title="Digger" body="Maze game by Windmill Software, 1983" />
-      <MenuEntry href="/games/dave" title="Dave" body="Dangerous Dave, Plattform Game by John Romero/1988" />
-      <MenuEntry href="/games/outrun" title="Outrun2" body="The original arcade from Sega, 1986" />
+      <MenuEntry
+        href="/games/space"
+        title="Space Commanders"
+        body="Space Invaders Clone, 1983"
+      />
+      <MenuEntry
+        href="/games/digger"
+        title="Digger"
+        body="Maze game by Windmill Software, 1983"
+      />
+      <MenuEntry
+        href="/games/dave"
+        title="Dave"
+        body="Dangerous Dave, Plattform Game by John Romero/1988"
+      />
+      <MenuEntry
+        href="/games/outrun"
+        title="Outrun2"
+        body="The original arcade from Sega, 1986"
+      />
       <MenuSpacer />
       <MenuEntry
         href="https://archive.org/details/softwarelibrary_msdos_games"
@@ -36,6 +48,6 @@ import Screen from "@components/Screen.astro";
         body="Hosted at Internet Archive"
       />
     </MenuList>
-    </Screen>
+  </Screen>
   <Footer home={true} />
 </Layout>
