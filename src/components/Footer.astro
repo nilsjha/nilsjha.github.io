@@ -9,27 +9,25 @@ const today = new Date();
 ---
 
 <footer
-  class="w-100
-  content-center
-  max-md:text-center
+  class="
+  text-base
+  md:text
   shrink-0
   my-4
-  max-md:my-2
   px-20
-  max-sm:px-4
-  max-sm:text-center
   uppercase
   tracking-widest
   flex flex-row gap-4"
 >
-  <span class="flex flex-row gap-1 max-md:hidden">
+  <span class="flex flex-row gap-1">
     {today.getFullYear()}
   </span>
     <span class="">■</span>
   <span class={home ? "" : "hidden"}>
     <a class="_hotlink" href="/">main menu</a></span
   >
-  <span class={home ? "hidden" : "max-md:hidden flex gap-2"}>
+  <span class={home ? "hidden" : "block"}>
+    <span class="flex flex-col md:flex-row md:gap-4">
      Nils Jarle Haugen<span class="text-slate-400 hover:animate-degauss"
       ><a
         href="https://www.fjordnorway.com/en/destinations/alesund--geiranger"
@@ -37,6 +35,7 @@ const today = new Date();
         target="_blank">ålesund</a
       ></span
     > norway
+    </span>
   </span>
   <div class="max-md:hidden">
     <span class={separator ? "" : "hidden"}></span>
