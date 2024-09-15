@@ -1,10 +1,10 @@
 ---
 interface Props {
+  name?: boolean;
   home?: boolean;
-  separator?: boolean;
 }
 
-const { name: name = false, separator = false } = Astro.props;
+const { name: name = false, home = true} = Astro.props;
 const today = new Date();
 ---
 
@@ -22,8 +22,8 @@ const today = new Date();
   <span class="flex flex-row gap-1">
     {today.getFullYear()}
   </span>
-  <span class={name ? "" : "hidden"}>
-    <a class="_hotlink" href="/">main menu</a></span
+  <span class={home ? "" : "hidden"}>
+    <a class="_hotlink text-nowrap" href="/">main menu</a></span
   >
   <span class={name ? "block" : "hidden"}>
     <span class="">■</span>
@@ -38,7 +38,6 @@ const today = new Date();
     </span>
   </span>
   <div class="hidden md:block">
-    <span class={separator ? "" : "hidden"}></span>
     <slot />
   </div>
 </footer>
