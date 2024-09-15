@@ -5,41 +5,36 @@ import MenuEntry from "@components/MenuEntry.astro";
 import MenuSpacer from "@components/MenuSpacer.astro";
 import MenuList from "@components/MenuList.astro";
 import Footer from "@components/Footer.astro";
+import Screen from "@components/Screen.astro";
 ---
 
 <Layout title="nilsjha.github.io">
-  <main class="grow py-20 container mx-auto">
     <Banner
       orgChar="NJ"
       org="Nils J."
       deptChar="H"
       dept="Haugen"
-      help1="Bruk musepekeren for å velge."
-      help2="Alt-F9 for å endre på menyen."
+      help1="Tech, photography, hiking"
+      help2="software, fishing, bricks..."
     />
+    <Screen>
+      <div class="m-4">
+      <div class="flex flex-col items-center justify-center  mx-auto w-2/3 gap-2">
+        <p class="">
+        <span class="text-4xl">W</span>elcome to my humble corner at the web!
+        </p>
+      <p>
+        This page is a tribute to the first computer I owned myself, and which inspired me to work with tech in the first place.
+        Have fun, and play some retrogames!<span class="text-black bg-white">&nbsp;</span>
+      </p>
+      </div>
+      </div>
     <MenuList>
-      <MenuEntry
-        href="#"
-        title="Welcome!"
-        body="I'm a software dev from norway"
-      />
       <MenuSpacer />
-      <!--
-      <MenuEntry
-        href="https://en.wikipedia.org/wiki/IBM_Personal_Computer"
-        title="What is this?"
-        body="Honouring history that made today possible"
-      />
-			<MenuEntry
-				href="/pcdos"
-				title="DOS Operativsystem"
-				body="Skriv meny for å returnere til meny"
-			/>
-			-->
       <MenuEntry
         href="/games"
-        title="Div spel (Games)"
-        body="[Val frå neste meny]"
+        title="Games"
+        body="[Selection in next menu]"
       />
       <MenuEntry
         href="https://linkedin.com/in/nhaugen/"
@@ -49,7 +44,7 @@ import Footer from "@components/Footer.astro";
       <MenuEntry
         href="https://github.com/nilsjha/"
         title="GitHub"
-        body="I use this for hosting code"
+        body="I use this for cloud hosting code"
       />
       <MenuEntry
         href="http://www.ntnu.no/alesund"
@@ -58,16 +53,17 @@ import Footer from "@components/Footer.astro";
       />
       <MenuSpacer />
       <MenuEntry
-        href="#"
-        title="Hobbies"
-        body="Computers, hiking, concerts, photography"
+        href="https://en.sognefjord.no/"
+        title="Sognefjord"
+        body="Norways greatest nature!"
       />
       <MenuEntry
-        href="https://en.sognefjord.no/"
-        title="Norways great nature"
-        body=""
+        href="/about"
+        title="About"
+        body="I'm a software dev from norway"
       />
+      <MenuSpacer />
     </MenuList>
-  </main>
+    </Screen>
   <Footer />
 </Layout>

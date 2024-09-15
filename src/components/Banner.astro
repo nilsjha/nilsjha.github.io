@@ -40,13 +40,13 @@ const crtFx = {
 };
 ---
 
-<header class="w-100">
-  <section class="w-100 font-mono max-md:text-2xl text-xl">
-    <div
-      class="justify-evenly max-md:flex max-md:flex-col grid grid-cols-12 m-4 gap-4 items-center tracking-widest max-lg:text-md"
+<header class="w-100 font-mono md:px-8">
+  <section class="w-100 text-2xl md:text-xl md:grid grid-cols-3 items-center justify-between">
+    <aside
+      class="max-md:flex max-md:flex-col m-4 gap-4 items-center tracking-widest max-lg:text-md"
     >
       <div
-        class="ident-box col-span-4 col-start-1 truncate leading-tight tracking-widest"
+        class="ident-box truncate leading-tight tracking-widest"
         transition:name="green-box"
         transition:animate={crtFx}
       >
@@ -61,16 +61,17 @@ const crtFx = {
           </tr>
         </table>
       </div>
-    </div>
-    <div
-      class="mx-4 col-span-2 shrink-0 col-start-6 max-md:hidden max-xl:col-span-3 max-md:col-span-3"
+    </aside>
+    <section
+      class="mx-4 justify-self-center hidden md:block"
       transition:name="banner-title-box"
       transition:animate="none"
     >
       <div
         class="border-double
       border-8
-      p-2
+      py-2
+      px-12
       m-2
       text-center"
       >
@@ -82,9 +83,9 @@ const crtFx = {
           >
         </h1>
       </div>
-    </div>
-    <div
-      class="col-span-3 col-end-12 max-md:invisible whitespace-nowrap"
+    </section>
+    <aside
+      class=" max-md:invisible whitespace-nowrap"
       transition:name="banner-help-box"
       transition:animate="fade"
     >
@@ -93,7 +94,7 @@ const crtFx = {
         <br />
         {help2}
       </span>
-    </div>
+    </aside>
   </section>
 
   <style>

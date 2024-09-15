@@ -5,29 +5,30 @@ import MenuEntry from "@components/MenuEntry.astro";
 import Footer from "@components/Footer.astro";
 import MenuSpacer from "@components/MenuSpacer.astro";
 import MenuList from "@components/MenuList.astro";
+import Screen from "@components/Screen.astro";
 ---
 
 <Layout title="nilsjha.github.io">
-  <main class="grow py-20 container mx-auto">
     <Banner
       org="Games from"
       deptChar="IA"
       dept="Internet Archive"
-      title="spel"
+      title="Games"
       help1=""
       help2=""
     />
+    <Screen>
     <MenuList>
       <MenuEntry
         href="/"
-        title="Hovudmeny (Home)"
-        body="RETURNER til forrige side"
+        title="Home"
+        body="RETURN to the main page"
       />
       <MenuSpacer />
-      <MenuEntry href="/games/space" title="Space Commanders" body="" />
-      <MenuEntry href="/games/digger" title="Digger" body="" />
-      <MenuEntry href="/games/dave" title="Dave" body="" />
-      <MenuEntry href="/games/outrun" title="Outrun2" body="" />
+      <MenuEntry href="/games/space" title="Space Commanders" body="Space Invaders Clone, 1983" />
+      <MenuEntry href="/games/digger" title="Digger" body="Maze game by Windmill Software, 1983" />
+      <MenuEntry href="/games/dave" title="Dave" body="Dangerous Dave, Plattform Game by John Romero/1988" />
+      <MenuEntry href="/games/outrun" title="Outrun2" body="The original arcade from Sega, 1986" />
       <MenuSpacer />
       <MenuEntry
         href="https://archive.org/details/softwarelibrary_msdos_games"
@@ -35,6 +36,6 @@ import MenuList from "@components/MenuList.astro";
         body="Hosted at Internet Archive"
       />
     </MenuList>
-  </main>
-  <Footer />
+    </Screen>
+  <Footer home={true} />
 </Layout>
