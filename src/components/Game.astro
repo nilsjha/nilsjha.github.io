@@ -25,7 +25,10 @@ const {
   not work
 </div>
 
-<div data-game-stage class="relative w-full grow min-h-60">
+<div
+  data-game-stage
+  class="relative w-full grow min-h-60 [&:fullscreen]:bg-black"
+>
   <div
     class="absolute inset-0 flex items-center justify-center overflow-hidden"
   >
@@ -56,10 +59,39 @@ const {
     frame.style.zoom = String(Math.max(zoom, 0.25));
   }
 
+  function toggleFullscreen(event: Event) {
+    event.preventDefault();
+    const stage = document.querySelector<HTMLElement>("[data-game-stage]");
+    if (document.fullscreenElement) document.exitFullscreen();
+    else stage?.requestFullscreen();
+  }
+
+  // DOSBox swallows mousedown inside the frame, so a click on the game can't
+  // take focus back once it has moved to the page; hand it over explicitly.
+  function focusGame() {
+    document.querySelector<HTMLElement>("[data-game-stage] iframe")?.focus();
+  }
+
+  function updateFullscreenLabels() {
+    const label = document.fullscreenElement ? "exit fullscreen" : "fullscreen";
+    document
+      .querySelectorAll("[data-game-fullscreen]")
+      .forEach((link) => (link.textContent = label));
+  }
+
+  document.addEventListener("fullscreenchange", () => {
+    updateFullscreenLabels();
+    focusGame();
+  });
+
   document.addEventListener("astro:page-load", () => {
+    document
+      .querySelectorAll("[data-game-fullscreen]")
+      .forEach((link) => link.addEventListener("click", toggleFullscreen));
     document
       .querySelectorAll<HTMLElement>("[data-game-stage]")
       .forEach((stage) => {
+        stage.addEventListener("click", focusGame);
         const observer = new ResizeObserver(() => fit(stage));
         observer.observe(stage);
         observers.push(observer);

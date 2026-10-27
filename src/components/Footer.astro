@@ -4,7 +4,7 @@ interface Props {
   home?: boolean;
 }
 
-const { name: name = false, home = true} = Astro.props;
+const { name: name = false, home = true } = Astro.props;
 ---
 
 <footer
@@ -18,9 +18,7 @@ const { name: name = false, home = true} = Astro.props;
   px-8
   py-8"
 >
-  <span class="flex flex-row gap-1">
-    2024
-  </span>
+  <span class="flex flex-row gap-1"> 2024</span>
   <span class={home ? "" : "hidden"}>
     <a class="_hotlink text-nowrap" href="/">main menu</a></span
   >
@@ -36,7 +34,7 @@ const { name: name = false, home = true} = Astro.props;
       > norway
     </span>
   </span>
-  <div class="hidden md:block">
+  <div class="hidden md:flex gap-4">
     <slot />
   </div>
 </footer>
