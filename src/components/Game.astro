@@ -8,10 +8,12 @@ interface Props {
   href?: string;
 }
 
+// The archive.org DOSBox embed renders a fixed 640x480 canvas, so the frame
+// keeps that size and is zoomed uniformly to fit the stage.
 const {
   framesource,
-  height = 384,
-  width = 560,
+  height = 480,
+  width = 640,
   title,
   description,
 } = Astro.props;
@@ -23,14 +25,49 @@ const {
   not work
 </div>
 
-<iframe
-  class=""
-  src={framesource}
-  width={width}
-  height={height}
-  frameborder="0"
-  webkitallowfullscreen="true"
-  mozallowfullscreen="true"
-  allowfullscreen
->
-</iframe>
+<div data-game-stage class="relative w-full grow min-h-60">
+  <div
+    class="absolute inset-0 flex items-center justify-center overflow-hidden"
+  >
+    <iframe
+      class="block"
+      src={framesource}
+      width={width}
+      height={height}
+      frameborder="0"
+      webkitallowfullscreen="true"
+      mozallowfullscreen="true"
+      allowfullscreen
+    >
+    </iframe>
+  </div>
+</div>
+
+<script>
+  let observers: ResizeObserver[] = [];
+
+  function fit(stage: HTMLElement) {
+    const frame = stage.querySelector("iframe");
+    if (!frame) return;
+    const zoom = Math.min(
+      stage.clientWidth / Number(frame.width),
+      stage.clientHeight / Number(frame.height),
+    );
+    frame.style.zoom = String(Math.max(zoom, 0.25));
+  }
+
+  document.addEventListener("astro:page-load", () => {
+    document
+      .querySelectorAll<HTMLElement>("[data-game-stage]")
+      .forEach((stage) => {
+        const observer = new ResizeObserver(() => fit(stage));
+        observer.observe(stage);
+        observers.push(observer);
+      });
+  });
+
+  document.addEventListener("astro:before-swap", () => {
+    observers.forEach((observer) => observer.disconnect());
+    observers = [];
+  });
+</script>

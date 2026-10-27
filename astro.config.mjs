@@ -1,5 +1,5 @@
 import { defineConfig } from "astro/config";
-import tailwind from "@astrojs/tailwind";
+import tailwindcss from "@tailwindcss/vite";
 
 import solidJs from "@astrojs/solid-js";
 
@@ -7,9 +7,11 @@ import solidJs from "@astrojs/solid-js";
 export default defineConfig({
   site: "https://nilsjha.github.io",
   integrations: [
-    tailwind(),
     solidJs({
       include: ["**/solid/*"],
     }),
   ],
+  vite: {
+    plugins: [tailwindcss()],
+  },
 });

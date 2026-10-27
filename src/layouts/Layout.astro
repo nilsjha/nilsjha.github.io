@@ -1,5 +1,6 @@
 ---
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
+import "../styles/global.css";
 
 interface Props {
   title: string;
@@ -33,10 +34,10 @@ const { title = "nilsjha.github.io" } = Astro.props;
     />
     <link rel="manifest" href="assets/site.webmanifest" />
     <title>{title}</title>
-    <ViewTransitions />
+    <ClientRouter />
   </head>
   <body
-    class="min-h-screen min-w-full flex flex-col bg-black text-white bg-gradient-to-br from-stone-950 font-mono font-bold"
+    class="min-h-screen min-w-full flex flex-col bg-black text-white bg-linear-to-br from-stone-950 font-mono font-bold"
   >
     <main class="container py-2 md:py-8 mx-auto grow flex flex-col">
       <slot />

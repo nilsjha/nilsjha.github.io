@@ -17,7 +17,7 @@ const {
 ---
 
 <li
-  class="group font-mono font-bold text-cyan-400 md:grid grid-cols-2 justify-center items-center flex flex-col"
+  class="group font-mono font-bold text-cyan-400 md:grid md:grid-cols-subgrid md:col-span-2 justify-center items-center flex flex-col"
 >
   <div class="col-start-1 flex flex-row justify-start gap-1">
     <aside
@@ -33,7 +33,7 @@ const {
       </a>
     </div>
   </div>
-  <div class="justify-self-start col-start-2 hidden md:block">
+  <div class="justify-self-start col-start-2 hidden md:block min-w-0 max-w-full">
     <a href={href}>
       <p class="overflow-hidden whitespace-nowrap text-ellipsis">{body}</p>
     </a>
