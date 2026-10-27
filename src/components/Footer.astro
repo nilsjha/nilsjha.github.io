@@ -5,7 +5,6 @@ interface Props {
 }
 
 const { name: name = false, home = true} = Astro.props;
-const today = new Date();
 ---
 
 <footer
@@ -20,7 +19,7 @@ const today = new Date();
   py-8"
 >
   <span class="flex flex-row gap-1">
-    {today.getFullYear()}
+    2024
   </span>
   <span class={home ? "" : "hidden"}>
     <a class="_hotlink text-nowrap" href="/">main menu</a></span

@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@theme {
+  --animate-flash: blink 0.8s step-start infinite;
+  --animate-degauss: jigle 1s linear(0, 1, -10, 10, 0, 1) infinite;
+  --animate-shake: jigle 1s linear(0.5, 0.5, -0.5, 0.5, 0.5, 0.5) infinite;
+
+  @keyframes blink {
+    0%,
+    100% {
+      filter: opacity(100%);
+    }
+    50% {
+      filter: opacity(5%);
+    }
+  }
+  @keyframes jigle {
+    0%,
+    100% {
+      filter: drop-shadow(2px 2px 0 pink) opacity(50%);
+    }
+    25% {
+      filter: drop-shadow(-2px 2px 0 blue) opacity(100%);
+    }
+    75% {
+      filter: drop-shadow(-2px -2px 0 green);
+    }
+    50% {
+      filter: drop-shadow(2px -2px 0 red) opacity(50%);
+    }
+  }
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@layer components {
+  a._hotlink {
+    color: var(--color-cyan-400);
+  }
+  a._hotlink:hover {
+    color: red;
+    animation: var(--animate-shake);
+  }
+}
